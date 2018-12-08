@@ -28,9 +28,5 @@ export default connect(
   store =>
     ({
       showindDetailedItem: store.showindDetailedItem
-    }),
-  dispatch =>
-    ({
-
     })
 )(App);

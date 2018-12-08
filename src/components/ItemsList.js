@@ -7,7 +7,7 @@ class ItemsList extends Component {
         return (
             <div className="right-part">
                 {
-                    this.props.isLoading ? <p>Loading ... </p> : this.props.items.length > 0 &&
+                    this.props.isLoading ? <p>Loading ... </p> : this.props.items.length > 0 ?
                         <Fragment>
                             {
                                 this.props.items.length === 25 && <PaginationButtons />
@@ -26,7 +26,7 @@ class ItemsList extends Component {
                                     )
                                 }
                             </ol>
-                        </Fragment>
+                        </Fragment> : <p>Nothing to show</p>
                 }
             </div>
         );

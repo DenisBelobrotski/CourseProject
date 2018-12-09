@@ -7,6 +7,7 @@ export default function loadItems(dispatch) {
             dispatch({ type: "HIDE_LOADING" });
             if (data.length > 0) {
                 dispatch({ type: "SET_ITEMS", items: data });
+                dispatch({ type: "HIDE_MULTIPLE_ITEMS" });
             }
         });
 }

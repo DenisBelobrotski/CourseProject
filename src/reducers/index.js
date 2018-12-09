@@ -148,5 +148,11 @@ export const rootReducer = combineReducers({
         if (action.type === "SET_ITEM") return action.item;
 
         return state;
-    }
+    },
+    isShowingMultipleItems: (state = false, action) => {
+        if (action.type === "SHOW_MULTIPLE_ITEMS") return true;
+        if (action.type === "HIDE_MULTIPLE_ITEMS") return false;
+
+        return state;
+    },
 })

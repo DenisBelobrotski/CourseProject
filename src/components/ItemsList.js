@@ -9,7 +9,9 @@ class ItemsList extends Component {
                 {
                     this.props.items.length > 0 ?
                         <Fragment>
-                            <PaginationButtons />
+                            {
+                                this.props.isShowingMultipleItems && <PaginationButtons />
+                            }
                             <ol>
                                 {
                                     this.props.items.map(item =>
@@ -35,6 +37,7 @@ export default connect(
     store =>
         ({
             items: store.items,
-            isLoading: store.isLoading
+            isLoading: store.isLoading,
+            isShowingMultipleItems: store.isShowingMultipleItems
         })
 )(ItemsList);

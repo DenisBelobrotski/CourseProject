@@ -10,6 +10,9 @@ export default function loadItems(dispatch, getState) {
             dispatch({ type: "HIDE_LOADING" });
             if (data.length > 0) {
                 dispatch({ type: "SET_ITEMS", items: data });
+                dispatch({ type: "SHOW_MULTIPLE_ITEMS" });
+            } else {
+                dispatch({ type: "PREV_PAGE" });
             }
         });
 }

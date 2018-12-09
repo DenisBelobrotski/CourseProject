@@ -129,15 +129,20 @@ class SearchForm extends Component {
                     type="button"
                     value="Search"
                     onClick={() => {
-                        this.props.hideInfo();
                         this.props.getItems();
                     }}
                 />
                 <input
                     type="button"
-                    value="get random beer"
+                    value="Clear"
                     onClick={() => {
-                        this.props.hideInfo();
+                        this.props.resetForm();
+                    }}
+                />
+                <input
+                    type="button"
+                    value="Get random beer"
+                    onClick={() => {
                         this.props.getRandomItem()
                     }}
                 />
@@ -161,6 +166,6 @@ export default connect(
                 }),
             getItems: () => dispatch(loadItems),
             getRandomItem: () => dispatch(loadRandomItem),
-            hideInfo: () => dispatch({ type: "HIDE_DETAILED_ITEM" })
+            resetForm: () => dispatch({ type: "RESET_VALUE" })
         })
 )(SearchForm);

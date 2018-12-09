@@ -8,5 +8,5 @@ export default function loadItems(dispatch) {
             if (data.length > 0) {
                 dispatch({ type: "SET_ITEMS", items: data });
             }
-        })
+        });
 }

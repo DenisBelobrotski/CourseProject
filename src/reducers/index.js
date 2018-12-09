@@ -98,6 +98,7 @@ export const rootReducer = combineReducers({
                         food: action.propertyValue
                     }
                 }
+                default: return state;
             }
         }
         if (action.type === "RESET_VALUE") {
@@ -138,9 +139,13 @@ export const rootReducer = combineReducers({
         
         return state;
     },
-    showindDetailedItem: (state = null, action) => {
-        if (action.type === "SET_DETAILED_ITEM") return action.item;
-        if (action.type === "HIDE_DETAILED_ITEM") return null;
+    showingItemId: (state = 0, action) => {
+        if (action.type === "SET_ITEM_ID") return action.id;
+
+        return state;
+    },
+    showingItem: (state = null, action) => {
+        if (action.type === "SET_ITEM") return action.item;
 
         return state;
     }

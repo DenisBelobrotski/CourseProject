@@ -1,15 +1,21 @@
-.App {
-  display: flex;
-  flex-direction: row;    
-  padding: 10px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .App-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;    
 }
 
-.App-container .detailed-info {
+.App {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.detailed-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -22,7 +28,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;  
+  align-items: center; 
+  margin: 0 5%; 
 }
 
 .search-form input {
@@ -30,10 +37,10 @@
 }
 
 .right-part {
-  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin: 0 5%;
 }
 
 .pagination {
@@ -54,8 +61,8 @@ ul {
 
 li {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   margin: 5px 0;
 }
 

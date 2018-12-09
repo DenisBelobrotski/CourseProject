@@ -11,5 +11,5 @@ export default function loadItems(dispatch, getState) {
             if (data.length > 0) {
                 dispatch({ type: "SET_ITEMS", items: data });
             }
-        })
+        });
 }

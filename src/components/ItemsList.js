@@ -7,26 +7,24 @@ class ItemsList extends Component {
         return (
             <div className="right-part">
                 {
-                    this.props.isLoading ? <p>Loading ... </p> : this.props.items.length > 0 ?
+                    this.props.items.length > 0 ?
                         <Fragment>
-                            {
-                                this.props.items.length === 25 && <PaginationButtons />
-                            }
+                            <PaginationButtons />
                             <ol>
                                 {
                                     this.props.items.map(item =>
                                         <li key={item.id}>
-                                            {item.name}
-                                            <input
-                                                type="button"
-                                                value="Get info"
-                                                onClick={() => this.props.showInfo(item)}
-                                            />
+                                            <h5>{item.name}</h5>
+                                            <h6>{item.first_brewed}</h6>
+                                            <p>{item.description}</p>
+                                            <a href={"/about/" + item.id}>More...</a>                                   
                                         </li>
                                     )
                                 }
                             </ol>
-                        </Fragment> : <p>Nothing to show</p>
+                        </Fragment> : 
+                        this.props.isLoading ?
+                        <p>Loading ... </p> : <p>Nothing to show</p>
                 }
             </div>
         );
@@ -38,9 +36,5 @@ export default connect(
         ({
             items: store.items,
             isLoading: store.isLoading
-        }),
-    dispatch =>
-        ({
-            showInfo: item => dispatch({ type: "SET_DETAILED_ITEM", item: item })
         })
 )(ItemsList);

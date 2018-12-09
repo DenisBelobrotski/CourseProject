@@ -1,5 +1,5 @@
 export default function createRequest(input, page = undefined) {
-    let result = "https://api.punkapi.com/v2/beers?per_page=25&";    
+    let result = "https://api.punkapi.com/v2/beers?per_page=15&";    
     for (var property in input) {
         if (input[property] !== "") {
             if (property === "brewed_before" || property === "brewed_after") {

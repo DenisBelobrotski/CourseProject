@@ -14,7 +14,6 @@ class PaginationButtons extends Component {
                         if (this.props.page > 1) {
                             this.props.loadItems();
                         }
-
                     }}
                 />
                 <p>{this.props.page}</p>

@@ -13,14 +13,15 @@ const Description = styled.p`
     background-color: yellow;
 `;
 
-const FirstBrewed = styled.h3 `
+const FirstBrewed = styled.h3`
     padding: 7px;
     border: 5px dotted orange;
     border-radius: 30%;
 `;
 
-class DetailedItemInfo extends Component {
-    componentDidMount() {
+class DetailedItemInfo extends Component {    
+
+    componentDidMount() {        
         this.props.setId(this.props.match.params.id);
         this.props.getItem();
     }
@@ -30,19 +31,19 @@ class DetailedItemInfo extends Component {
             <div className="detailed-info">
                 {
                     this.props.showingItem === null ? <p>Loading...</p> :
-                    <Fragment>
-                        <Header>{this.props.showingItem.name}</Header>
-                        <Description>{this.props.showingItem.description}</Description>
-                        <img src={this.props.showingItem.image_url} alt={this.props.showingItem.name} />
-                        <FirstBrewed>First brewed:{this.props.showingItem.first_brewed}</FirstBrewed>
-                        <h4>{this.props.showingItem.tagline}</h4>
-                        <ul>
-                            <li>Food:</li>
-                            {
-                                this.props.showingItem.food_pairing.map(food => <li key={food}>{food}</li>)
-                            }
-                        </ul>
-                    </Fragment>
+                        <Fragment>
+                            <Header>{this.props.showingItem.name}</Header>
+                            <Description>{this.props.showingItem.description}</Description>
+                            <img src={this.props.showingItem.image_url} alt={this.props.showingItem.name} />
+                            <FirstBrewed>First brewed:{this.props.showingItem.first_brewed}</FirstBrewed>
+                            <h4>{this.props.showingItem.tagline}</h4>
+                            <ul>
+                                <li>Food:</li>
+                                {
+                                    this.props.showingItem.food_pairing.map(food => <li key={food}>{food}</li>)
+                                }
+                            </ul>
+                        </Fragment>
                 }
             </div>
         );

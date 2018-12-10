@@ -33,12 +33,12 @@ class PaginationButtons extends Component {
 export default connect(
     store =>
         ({
-            page: store.page,
+            page: store.page
         }),
     dispatch =>
         ({
             nextPage: () => dispatch({ type: "NEXT_PAGE" }),
             prevPage: () => dispatch({ type: "PREV_PAGE" }),
-            loadItems: () => dispatch(loadItems),
+            loadItems: () => dispatch(loadItems)
         })
 )(PaginationButtons);

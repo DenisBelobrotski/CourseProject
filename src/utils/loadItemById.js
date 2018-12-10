@@ -1,5 +1,4 @@
 export default function loadItemById(dispatch, getState) {
-    debugger;
     dispatch({ type: "SHOW_LOADING" });
     const state = getState();
     fetch(`https://api.punkapi.com/v2/beers/${state.showingItemId}`)

@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import MainPage from './components/MainPage';
 import { Provider } from "react-redux";
 import { store } from "./store/configureStore";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import DetailedItemInfo from './components/DetailedItemInfo';
+import DetailedItemInfoPage from './components/DetailedItemInfoPage';
 
 ReactDOM.render(<Provider store={store}>
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={App} />
-            <Route exact path="/about/:id" component={DetailedItemInfo} />
+            <Route exact path="/:request?" component={MainPage} />
+            <Route exact path="/about/:id" component={DetailedItemInfoPage} />
         </Switch>
     </BrowserRouter>
 </Provider>, document.getElementById('root'));
